@@ -1,0 +1,167 @@
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.main-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 80%; /* or any % */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.left-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thumbnail-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail-images > img {
+  max-width: 115px;
+  border-radius: 10px;
+}
+
+.left-image > img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between; /* pushes logo left, profile/cart right */
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e5e5; /* light grey separator */
+  background-color: #fff;
+  margin-bottom: 3rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* space between logo and links */
+}
+
+.header-left img {
+  height: 20px; /* logo height */
+}
+
+.header-left a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.header-left a:hover {
+  color: orange; /* highlight on hover */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-right img.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.right-text {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2rem;
+}
+
+h3 {
+  color: hsl(219, 9%, 45%);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+p {
+  color: hsl(219, 9%, 45%);
+  font-size: 0.9rem;
+  line-height: 22px;
+}
+
+.cart-amount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-amount-cost {
+  color: black;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.cart-percentage {
+  background-color: black;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+}
+
+.higher-cost {
+  margin-top: 0.6rem;
+  text-decoration: line-through;
+  color: hsl(219, 9%, 45%);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0.8rem 1.4rem;
+  width: 140px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  justify-content: space-between;
+  border-style: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.add-button > img {
+  width: 15px;
+}
+
+.cart-button {
+  display: flex;
+  align-items: center;
+  background-color: orange;
+  width: 250px;
+  justify-content: center;
+  gap: 10px;
+  color: black;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  border-style: none;
+}
