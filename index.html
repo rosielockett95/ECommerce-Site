@@ -35,11 +35,39 @@
             <img src="images/image-product-1.jpg" />
           </div>
           <div class="thumbnail-images">
-            <img src="images/image-product-1-thumbnail.jpg" />
-            <img src="images/image-product-2-thumbnail.jpg" />
-            <img src="images/image-product-3-thumbnail.jpg" />
-            <img src="images/image-product-4-thumbnail.jpg" />
+            <img
+              src="images/image-product-1-thumbnail.jpg"
+              data-full="images/image-product-1.jpg"
+              class="thumbnail"
+            />
+            <img
+              src="images/image-product-2-thumbnail.jpg"
+              data-full="images/image-product-2.jpg"
+              class="thumbnail"
+            />
+            <img
+              src="images/image-product-3-thumbnail.jpg"
+              data-full="images/image-product-3.jpg"
+              class="thumbnail"
+            />
+            <img
+              src="images/image-product-4-thumbnail.jpg"
+              data-full="images/image-product-4.jpg"
+              class="thumbnail"
+            />
           </div>
+        </div>
+        <div id="popup" class="popup">
+          <div class="popup-content">
+            <button id="prev" class="nav-btn">
+              <img src="images/icon-previous.svg" />
+            </button>
+            <img id="popup-img" src="" alt="Popup Image" />
+            <button id="next" class="nav-btn">
+              <img src="images/icon-next.svg" />
+            </button>
+          </div>
+          <button id="close" class="close=btn">X</button>
         </div>
         <div class="right-text">
           <h3>Sneaker Company</h3>
@@ -66,5 +94,6 @@
         </div>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>

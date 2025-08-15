@@ -14,6 +14,20 @@ body {
   margin: 0 auto;
 }
 
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+#popup-img {
+  max-width: 60%;
+  max-height: 60%;
+}
+
 .left-image-container {
   display: flex;
   flex-direction: column;
@@ -35,6 +49,10 @@ body {
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+
+nav > a:not(:last-child) {
+  margin-right: 10px;
 }
 
 header {
@@ -164,4 +182,5 @@ p {
   font-size: 0.9rem;
   border-radius: 10px;
   border-style: none;
+  cursor: pointer;
 }
