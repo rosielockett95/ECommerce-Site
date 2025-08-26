@@ -14,6 +14,12 @@ body {
   margin: 0 auto;
 }
 
+.active,
+.thumbnail:hover {
+  outline: orange solid 3px;
+  opacity: 32%;
+}
+
 .popup {
   display: none; /* Hidden by default */
   position: fixed;
@@ -21,11 +27,53 @@ body {
   background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
+  right: -321px;
+}
+
+.popup-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: -152px;
+  bottom: 123px;
+}
+
+.nav-btn {
+  padding: 1rem;
+  border-radius: 50px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn > img {
+  width: 80%;
+}
+
+#next {
+  transform: translateX(-50%);
+}
+
+#prev {
+  transform: translateX(+50%);
 }
 
 #popup-img {
-  max-width: 60%;
-  max-height: 60%;
+  max-width: 50%;
+  max-height: 50%;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: -45px;
+  left: 555px;
+  background: none; /* remove button background */
+  border: none; /* remove default border */
+  padding: 0; /* remove spacing */
+  margin: 0;
+  cursor: pointer;
 }
 
 .left-image-container {
@@ -38,6 +86,20 @@ body {
   display: flex;
   gap: 10px;
   margin-top: 10px;
+}
+
+.thumbnail-images-popup {
+  display: flex;
+  gap: 19px;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 175px;
+  left: 660px;
+}
+
+.thumbnail-images-popup > img:hover {
+  outline: orange solid 3px;
+  opacity: 32%;
 }
 
 .thumbnail-images > img {

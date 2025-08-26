@@ -34,7 +34,7 @@
           <div class="left-image">
             <img src="images/image-product-1.jpg" />
           </div>
-          <div class="thumbnail-images">
+          <div id="thumbnail-images" class="thumbnail-images">
             <img
               src="images/image-product-1-thumbnail.jpg"
               data-full="images/image-product-1.jpg"
@@ -59,6 +59,15 @@
         </div>
         <div id="popup" class="popup">
           <div class="popup-content">
+            <button id="close" class="close-btn">
+              <svg width="40" height="40" viewbox="0 0 40 40">
+                <path
+                  d="M 10,10 L 30,30 M 30,10 L 10,30"
+                  stroke="white"
+                  stroke-width="4"
+                />
+              </svg>
+            </button>
             <button id="prev" class="nav-btn">
               <img src="images/icon-previous.svg" />
             </button>
@@ -67,7 +76,6 @@
               <img src="images/icon-next.svg" />
             </button>
           </div>
-          <button id="close" class="close=btn">X</button>
         </div>
         <div class="right-text">
           <h3>Sneaker Company</h3>
