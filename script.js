@@ -1,3 +1,27 @@
+let mediaQuery = window.matchMedia("(max-width: 800px)");
+const navBar = document.getElementById("nav");
+const hamburgerMenu = document.getElementById("nav-menu");
+const mobileNavMenu = document.getElementById("mobile-nav-menu");
+const closeIcon = document.getElementById("close-icon");
+
+if (mediaQuery.matches) {
+  navBar.classList.add("hidden");
+} else {
+  navBar.classList.remove("hidden");
+}
+
+if (mediaQuery.matches) {
+  hamburgerMenu.addEventListener("click", () => {
+    mobileNavMenu.classList.remove("hidden");
+  });
+}
+
+if (mediaQuery.matches) {
+  closeIcon.addEventListener("click", () => {
+    mobileNavMenu.classList.add("hidden");
+  });
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   const thumbs = document.querySelectorAll(".thumbnail");
   const thumbnailImages = document.getElementById("thumbnail-images");

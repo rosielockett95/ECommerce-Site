@@ -14,6 +14,10 @@ body {
   margin: 0 auto;
 }
 
+.hidden {
+  display: none;
+}
+
 .active,
 .thumbnail:hover {
   outline: orange solid 3px;
@@ -245,4 +249,92 @@ p {
   border-radius: 10px;
   border-style: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .main-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: normal;
+  }
+
+  .mobile-nav-menu {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 50%;
+    position: fixed;
+    background: white;
+    top: 0;
+    left: 0;
+  }
+
+  .mobile-nav-menu > a {
+    color: black;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 22px;
+    padding-left: 22px;
+  }
+
+  #first-link {
+    margin-top: 70px;
+  }
+
+  #close-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    left: 24px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  header {
+    padding: 1rem 1rem;
+    margin-bottom: 0px;
+  }
+
+  .header-left {
+    gap: 1rem;
+  }
+
+  .header-left img {
+    height: auto;
+  }
+
+  .header-right img.avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .left-image-container {
+    width: 100%;
+  }
+
+  .thumbnail-images {
+    display: none;
+  }
+
+  .left-image > img {
+    border-radius: 0px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+
+  .cart-button {
+    width: 100%;
+    padding: 0.8rem;
+  }
 }
