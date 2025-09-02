@@ -9,13 +9,59 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  width: 80%; /* or any % */
+
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .hidden {
   display: none;
+}
+
+.mobile-cart-pop-up {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  background-color: white;
+  width: 82%;
+  padding: 2rem;
+  height: 85%;
+  border-radius: 10px;
+  min-width: 350px;
+  max-height: 320px;
+}
+
+.cart-main-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 30px 0px;
+  gap: 30px;
+  padding: 1.8rem;
+  justify-content: space-around;
+}
+
+.cart-main-container > img:not(:last-child) {
+  width: 105px;
+  height: auto;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: grey;
+  position: absolute;
+  top: 71px;
+  left: 0px;
+}
+
+h2 {
+  margin: 0px;
+}
+
+.delete-button {
+  width: 22px;
+  cursor: pointer;
 }
 
 .active,
@@ -25,21 +71,23 @@ body {
 }
 
 .popup {
+  display: flex;
+  flex-direction: column;
   display: none; /* Hidden by default */
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
   align-items: center;
-  right: -321px;
 }
 
 .popup-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 500px;
   position: relative;
-  right: -152px;
-  bottom: 123px;
 }
 
 .nav-btn {
@@ -51,28 +99,30 @@ body {
   justify-content: center;
 }
 
-.nav-btn > img {
-  width: 80%;
-}
-
 #next {
   transform: translateX(-50%);
+  position: absolute;
+  top: 35%;
+  right: -9%;
 }
 
 #prev {
   transform: translateX(+50%);
+  position: absolute;
+  top: 35%;
+  left: -9%;
 }
 
 #popup-img {
-  max-width: 50%;
-  max-height: 50%;
   border-radius: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 .close-btn {
   position: absolute;
-  top: -45px;
-  left: 555px;
+  top: 2px;
+  right: 5px;
   background: none; /* remove button background */
   border: none; /* remove default border */
   padding: 0; /* remove spacing */
@@ -84,6 +134,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .thumbnail-images {
@@ -96,9 +147,6 @@ body {
   display: flex;
   gap: 19px;
   margin-top: 10px;
-  position: absolute;
-  bottom: 175px;
-  left: 660px;
 }
 
 .thumbnail-images-popup > img:hover {
@@ -107,7 +155,7 @@ body {
 }
 
 .thumbnail-images > img {
-  max-width: 115px;
+  width: 23%;
   border-radius: 10px;
 }
 
@@ -155,6 +203,10 @@ header {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+.header-right > img {
+  cursor: pointer;
 }
 
 .header-right img.avatar {
@@ -236,7 +288,8 @@ p {
   width: 15px;
 }
 
-.cart-button {
+.cart-button,
+.checkout-button {
   display: flex;
   align-items: center;
   background-color: orange;
@@ -251,12 +304,44 @@ p {
   cursor: pointer;
 }
 
+.mobile-nav-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: all;
+  z-index: 2;
+}
+
 @media screen and (max-width: 800px) {
   .main-section {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: normal;
+  }
+
+  .left-image-container {
+    position: relative;
+    width: 100%;
+  }
+
+  #next {
+    transform: translateX(-50%);
+    position: absolute;
+    top: 35%;
+    right: -3%;
+  }
+
+  #prev {
+    transform: translateX(+50%);
+    position: absolute;
+    top: 35%;
+    left: -3%;
+  }
+
+  .nav-btn {
+    padding: 0.8rem;
+    border-radius: 30px;
   }
 
   .mobile-nav-menu {
@@ -268,6 +353,10 @@ p {
     background: white;
     top: 0;
     left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    visibility: hidden;
   }
 
   .mobile-nav-menu > a {
@@ -276,6 +365,7 @@ p {
     font-size: 1.1rem;
     margin-top: 22px;
     padding-left: 22px;
+    cursor: pointer;
   }
 
   #first-link {
@@ -305,6 +395,7 @@ p {
 
   .header-left img {
     height: auto;
+    cursor: pointer;
   }
 
   .header-right img.avatar {
@@ -312,16 +403,21 @@ p {
     height: 30px;
   }
 
-  .left-image-container {
-    width: 100%;
-  }
-
   .thumbnail-images {
     display: none;
   }
 
-  .left-image > img {
+  .left-image {
     border-radius: 0px;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .right-text {
+    padding: 1.5rem 1.5rem;
+  }
+
+  h1 {
+    margin-bottom: 0px;
   }
 
   .button-container {
@@ -333,7 +429,8 @@ p {
     width: 100%;
   }
 
-  .cart-button {
+  .cart-button,
+  .checkout-button {
     width: 100%;
     padding: 0.8rem;
   }

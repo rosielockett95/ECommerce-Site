@@ -17,9 +17,9 @@
   <body>
     <header>
       <div class="header-left">
-        <nav id="mobile-nav">
+        <nav id="mobile-nav" class="hidden" aria-hidden="true">
           <img id="nav-menu" src="images/icon-menu.svg" />
-          <div id="mobile-nav-menu" class="mobile-nav-menu hidden">
+          <div id="mobile-nav-menu" class="mobile-nav-menu">
             <img id="close-icon" src="images/icon-close.svg" />
             <a id="first-link" href="#">Collections</a> <a href="#">Men</a>
             <a href="#">Women</a> <a href="#">About</a> <a href="#">Contact</a>
@@ -33,15 +33,30 @@
         </nav>
       </div>
       <div class="header-right">
-        <img src="images/icon-cart.svg" />
+        <img class="cart" src="images/icon-cart.svg" />
         <img class="avatar" src="images/image-avatar.png" />
       </div>
     </header>
     <main>
       <section class="main-section">
         <div class="left-image-container">
+          <section class="mobile-cart-pop-up hidden">
+            <div>
+              <h2>Cart</h2>
+              <div class="cart-main-container">
+                <div class="line"></div>
+                <img
+                  class="cart-image"
+                  src="images/image-product-1-thumbnail.jpg"
+                />
+                <p class="cart-text-content"></p>
+                <img class="delete-button" src="images/icon-delete.svg" />
+              </div>
+              <button class="checkout-button">Checkout</button>
+            </div>
+          </section>
           <div class="left-image">
-            <img src="images/image-product-1.jpg" />
+            <img id="main-image" src="images/image-product-1.jpg" />
           </div>
           <div id="thumbnail-images" class="thumbnail-images">
             <img
@@ -68,7 +83,7 @@
         </div>
         <div id="popup" class="popup">
           <div class="popup-content">
-            <button id="close" class="close-btn">
+            <button id="close" class="close-btn" data-button="close">
               <svg width="40" height="40" viewbox="0 0 40 40">
                 <path
                   d="M 10,10 L 30,30 M 30,10 L 10,30"
@@ -77,11 +92,11 @@
                 />
               </svg>
             </button>
-            <button id="prev" class="nav-btn">
+            <button id="prev" class="nav-btn" data-button="prev">
               <img src="images/icon-previous.svg" />
             </button>
             <img id="popup-img" src="" alt="Popup Image" />
-            <button id="next" class="nav-btn">
+            <button id="next" class="nav-btn" data-button="next">
               <img src="images/icon-next.svg" />
             </button>
           </div>
