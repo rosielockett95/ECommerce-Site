@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
-  let mediaQuery = window.matchMedia("(max-width: 800px)");
+  const mediaQuery = window.matchMedia("(max-width: 800px)");
   const navBar = document.getElementById("nav");
   const hamburgerMenu = document.getElementById("nav-menu");
   const mobileNav = document.getElementById("mobile-nav");
@@ -119,46 +119,82 @@ const shoppingCart = document.querySelector(".cart");
 const addToCartButton = document.querySelector(".cart-button");
 const cartContent = document.querySelector(".cart-text-content");
 const cartImage = document.querySelector(".cart-image");
+const addButton = document.querySelector(".plus");
+const minusButton = document.querySelector(".minus");
+const mainContainer = document.querySelector(".cart-main-container");
+
+let count = 0;
+let cartTotal = document.querySelector(".cart-total");
+cartTotal.textContent = count;
+
+addButton.addEventListener("click", () => {
+  {
+    count++;
+    cartTotal.textContent = count;
+    console.log(count);
+  }
+});
+
+{
+  minusButton.addEventListener("click", () => {
+    if (count > 0) {
+      count--;
+    }
+    cartTotal.textContent = count;
+  });
+}
 
 let cart = [];
 
 function addToCart() {
-  const mainContainer = document.querySelector(".cart-main-container");
-  if (cart.length === 0) {
-    cartImage.remove();
+  if (count === 0) {
+    cartImage.classList.add("hidden");
+    deleteButton.classList.add("hidden");
     cartContent.innerHTML = "Your cart is empty";
   }
 
   addToCartButton.addEventListener("click", () => {
     cart.push("Fall Limited Edition Sneakers");
-    console.log(cart);
-    if (cart.length >= 1) {
+    if (count >= 1) {
+      cartImage.classList.remove("hidden");
+      deleteButton.classList.remove("hidden");
       cartContent.insertAdjacentElement("beforebegin", cartImage);
-      cartContent.innerHTML = `<p>Fall Limited Edition Sneakers</p><p> $125 x ${
-        cart.length
-      }<strong> $${cart.length * 125}</strong></p>`;
+      cartContent.innerHTML = `<p>Fall Limited Edition Sneakers</p><p> $125 x ${count}<strong> $${
+        count * 125
+      }</strong></p>`;
     }
+
+    count = 0;
+    cartTotal.textContent = count;
   });
 }
 
 const deleteButton = document.querySelector(".delete-button");
+const mediaQuery = window.matchMedia("(max-width: 800px)");
+const cartCloseBtn = document.querySelector(".cart-close-btn");
 
 deleteButton.addEventListener("click", () => {
-  cart.length--;
-  if (cart.length >= 1) {
-    cartContent.innerHTML = `<p>Fall Limited Edition Sneakers</p><p> $125 x ${
-      cart.length
-    }<strong> $${cart.length * 125}</strong></p>`;
-  } else if (cart.length === 0) {
-    cartImage.remove();
-    cartContent.innerHTML = "Your cart is empty";
-  }
+  cart = [];
+  cartContent.innerHTML = "Your cart is empty";
+  cartImage.classList.add("hidden");
+  deleteButton.classList.add("hidden");
 });
 
-document
-  .querySelector(".cart")
-  .addEventListener("click", () =>
-    document.querySelector(".mobile-cart-pop-up").classList.remove("hidden")
-  );
+cartCloseBtn.addEventListener("click", () =>
+  document.querySelector(".mobile-cart-pop-up").classList.add("hidden")
+);
+
+function cartPopUp(e) {
+  // Mobile View
+  if (e.matches) {
+    document
+      .querySelector(".cart")
+      .addEventListener("click", () =>
+        document.querySelector(".mobile-cart-pop-up").classList.toggle("hidden")
+      );
+  }
+}
 
 addToCart();
+cartPopUp(mediaQuery);
+mediaQuery.addEventListener("change", cartPopUp);
