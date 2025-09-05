@@ -18,9 +18,31 @@
     <header>
       <div class="header-left">
         <nav id="mobile-nav" class="hidden" aria-hidden="true">
-          <img id="nav-menu" src="images/icon-menu.svg" />
+          <svg
+            id="nav-menu"
+            width="16"
+            height="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+            />
+          </svg>
           <div id="mobile-nav-menu" class="mobile-nav-menu">
-            <img id="close-icon" src="images/icon-close.svg" />
+            <svg
+              id="close-icon"
+              width="14"
+              height="15"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              />
+            </svg>
             <a id="first-link" href="#">Collections</a> <a href="#">Men</a>
             <a href="#">Women</a> <a href="#">About</a> <a href="#">Contact</a>
           </div>
@@ -33,7 +55,12 @@
         </nav>
       </div>
       <div class="header-right">
-        <img class="cart" src="images/icon-cart.svg" />
+        <div class="cart-div">
+          <img class="cart" src="images/icon-cart.svg" />
+          <div>
+            <div class="amount-bubble hidden"></div>
+          </div>
+        </div>
         <img class="avatar" src="images/image-avatar.png" />
       </div>
     </header>
@@ -55,7 +82,7 @@
                 <p class="cart-text-content"></p>
                 <img class="delete-button" src="images/icon-delete.svg" />
               </div>
-              <button class="checkout-button">Checkout</button>
+              <button class="checkout-button-popup">Checkout</button>
             </div>
           </section>
           <div class="left-image">
@@ -87,21 +114,17 @@
         <div id="popup" class="popup">
           <div class="popup-content">
             <button id="close" class="close-btn" data-button="close">
-              <svg width="40" height="40" viewbox="0 0 40 40">
+              <svg class="close-svg" width="40" height="40" viewbox="0 0 40 40">
                 <path
                   d="M 10,10 L 30,30 M 30,10 L 10,30"
-                  stroke="white"
+                  stroke="currentColor"
                   stroke-width="4"
                 />
               </svg>
             </button>
-            <button id="prev" class="nav-btn" data-button="prev">
-              <img src="images/icon-previous.svg" />
-            </button>
+            <button id="prev" class="nav-btn" data-button="prev">❮</button>
             <img id="popup-img" src="" alt="Popup Image" />
-            <button id="next" class="nav-btn" data-button="next">
-              <img src="images/icon-next.svg" />
-            </button>
+            <button id="next" class="nav-btn" data-button="next">❯</button>
           </div>
         </div>
         <div class="right-text">

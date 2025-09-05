@@ -124,14 +124,22 @@ const minusButton = document.querySelector(".minus");
 const mainContainer = document.querySelector(".cart-main-container");
 
 let count = 0;
+const amountBubble = document.querySelector(".amount-bubble");
 let cartTotal = document.querySelector(".cart-total");
 cartTotal.textContent = count;
+const cartButton = document.querySelector(".cart");
+
+cartButton.addEventListener("click", () =>
+  document.querySelector(".mobile-cart-pop-up").classList.toggle("hidden")
+);
 
 addButton.addEventListener("click", () => {
   {
     count++;
     cartTotal.textContent = count;
     console.log(count);
+    amountBubble.classList.remove("hidden");
+    amountBubble.textContent = count;
   }
 });
 
@@ -170,7 +178,7 @@ function addToCart() {
 }
 
 const deleteButton = document.querySelector(".delete-button");
-const mediaQuery = window.matchMedia("(max-width: 800px)");
+
 const cartCloseBtn = document.querySelector(".cart-close-btn");
 
 deleteButton.addEventListener("click", () => {
@@ -178,23 +186,11 @@ deleteButton.addEventListener("click", () => {
   cartContent.innerHTML = "Your cart is empty";
   cartImage.classList.add("hidden");
   deleteButton.classList.add("hidden");
+  amountBubble.textContent = "0";
 });
 
 cartCloseBtn.addEventListener("click", () =>
   document.querySelector(".mobile-cart-pop-up").classList.add("hidden")
 );
 
-function cartPopUp(e) {
-  // Mobile View
-  if (e.matches) {
-    document
-      .querySelector(".cart")
-      .addEventListener("click", () =>
-        document.querySelector(".mobile-cart-pop-up").classList.toggle("hidden")
-      );
-  }
-}
-
 addToCart();
-cartPopUp(mediaQuery);
-mediaQuery.addEventListener("change", cartPopUp);

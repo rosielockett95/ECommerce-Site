@@ -21,14 +21,31 @@ body {
 .mobile-cart-pop-up {
   position: absolute;
   z-index: 1;
-  top: 10px;
+  top: 65px;
   background-color: white;
-  width: 82%;
+  width: 25%;
   padding: 2rem;
   height: 85%;
   border-radius: 10px;
   min-width: 350px;
   max-height: 320px;
+  right: 39px;
+}
+
+.amount-bubble {
+  background-color: orange;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.7rem;
+  border-radius: 48%;
+  position: absolute;
+  top: -18px;
+  right: -10px;
+  color: white;
+  font-weight: 800;
+}
+
+.cart-div {
+  position: relative;
 }
 
 .cart-header {
@@ -114,6 +131,10 @@ h2 {
   position: absolute;
   top: 35%;
   right: -9%;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
 }
 
 #prev {
@@ -121,6 +142,16 @@ h2 {
   position: absolute;
   top: 35%;
   left: -9%;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+}
+
+#next:hover,
+#prev:hover {
+  background-color: orange;
+  cursor: pointer;
 }
 
 #popup-img {
@@ -137,7 +168,12 @@ h2 {
   border: none; /* remove default border */
   padding: 0; /* remove spacing */
   margin: 0;
+  color: white;
   cursor: pointer;
+}
+
+.close-btn:hover {
+  color: orange;
 }
 
 .left-image-container {
@@ -157,6 +193,7 @@ h2 {
   display: flex;
   gap: 19px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .thumbnail-images-popup > img:hover {
@@ -167,6 +204,7 @@ h2 {
 .thumbnail-images > img {
   width: 23%;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .left-image > img {
@@ -177,6 +215,10 @@ h2 {
 
 nav > a:not(:last-child) {
   margin-right: 10px;
+}
+
+nav > a:hover {
+  box-shadow: 0 2px 0 orange;
 }
 
 header {
@@ -197,6 +239,7 @@ header {
 
 .header-left img {
   height: 20px; /* logo height */
+  cursor: pointer;
 }
 
 .header-left a {
@@ -223,6 +266,10 @@ header {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.avatar:hover {
+  outline: 2px solid orange;
 }
 
 .right-text {
@@ -296,6 +343,11 @@ h1 {
 
 .add-button > img {
   width: 15px;
+  cursor: pointer;
+}
+
+.add-button > img:hover {
+  opacity: 0.8;
 }
 
 .cart-button,
@@ -314,6 +366,27 @@ h1 {
   cursor: pointer;
 }
 
+.checkout-button-popup {
+  display: flex;
+  align-items: center;
+  background-color: orange;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+  color: black;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  border-style: none;
+  cursor: pointer;
+  padding: 0.6rem 0.8rem;
+}
+
+.cart-button:hover,
+.checkout-button-popup:hover {
+  opacity: 0.8;
+}
+
 .mobile-nav-menu.open {
   opacity: 1;
   transform: translateY(0);
@@ -328,6 +401,19 @@ h1 {
     flex-direction: column;
     width: 100%;
     align-items: normal;
+  }
+
+  .mobile-cart-pop-up {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    background-color: white;
+    width: 32%;
+    padding: 2rem;
+    height: 65%;
+    border-radius: 10px;
+    min-width: 258px;
+    max-height: 272px;
   }
 
   .left-image-container {
@@ -378,6 +464,11 @@ h1 {
     cursor: pointer;
   }
 
+  #nav-menu:hover {
+    color: orange;
+    cursor: pointer;
+  }
+
   #first-link {
     margin-top: 70px;
   }
@@ -388,6 +479,11 @@ h1 {
     position: absolute;
     top: 20px;
     left: 24px;
+    cursor: pointer;
+  }
+
+  #close-icon:hover {
+    color: orange;
   }
 
   .hidden {
@@ -403,6 +499,10 @@ h1 {
     gap: 1rem;
   }
 
+  .header-right {
+    position: relative;
+  }
+
   .header-left img {
     height: auto;
     cursor: pointer;
@@ -411,6 +511,17 @@ h1 {
   .header-right img.avatar {
     width: 30px;
     height: 30px;
+  }
+  .amount-bubble {
+    background-color: orange;
+    padding: 0.2rem 0.3rem;
+    font-size: 0.7rem;
+    border-radius: 48%;
+    position: absolute;
+    top: -18px;
+    right: -10px;
+    color: white;
+    font-weight: 800;
   }
 
   .thumbnail-images {
